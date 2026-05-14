@@ -1,0 +1,12 @@
+cookie:
+  expiry_days: 30
+  key: climate_secret_key
+  name: climate_lens
+credentials:
+  usernames:
+    Tapan Datta:
+      email: tapandattapeketi7@gmail.com
+      name: Tapan Datta
+      password: $2b$12$YlX7jgy/FH8234WyORM2EOSLEoquJ19w8Eqn0fxdVOT8J9lYUcHg2
+preauthorized:
+  emails: []
