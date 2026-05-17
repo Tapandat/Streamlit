@@ -1,4 +1,4 @@
-%%writefile climate_lens/pages/2_Temperature_Trends.py
+
 
 import streamlit as st
 import sys
