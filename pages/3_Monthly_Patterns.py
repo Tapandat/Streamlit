@@ -1,4 +1,4 @@
-%%writefile climate_lens/pages/3_Monthly_Patterns.py
+
 
 import streamlit as st
 import sys
