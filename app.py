@@ -9,8 +9,6 @@ st.set_page_config(page_title="🌍 Climate Lens", layout="wide", page_icon="�
 
 st.markdown("""
 <style>
-/* Global */
-body { font-family: 'Segoe UI', sans-serif; }
 [data-testid="stAppViewContainer"] {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     min-height: 100vh;
@@ -22,10 +20,9 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 [data-testid="stSidebar"] * { color: white !important; }
 
-/* Hero */
 .hero {
     text-align: center;
-    padding: 3rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
 }
 .hero h1 {
     font-size: 3.5rem;
@@ -33,12 +30,12 @@ body { font-family: 'Segoe UI', sans-serif; }
     background: linear-gradient(90deg, #00c9ff, #92fe9d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 .hero p {
     color: rgba(255,255,255,0.7);
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .divider {
     height: 2px;
@@ -46,8 +43,6 @@ body { font-family: 'Segoe UI', sans-serif; }
     margin: 1rem 0 2rem 0;
     border: none;
 }
-
-/* Auth card */
 .auth-card {
     background: rgba(255,255,255,0.07);
     backdrop-filter: blur(20px);
@@ -58,18 +53,19 @@ body { font-family: 'Segoe UI', sans-serif; }
     margin: 0 auto;
 }
 
-/* Inputs */
-input[type="text"], input[type="password"], input[type="email"] {
-    background: rgba(255,255,255,0.1) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
+/* ✅ Fix: input text BLACK so it's visible */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
     border-radius: 10px !important;
-    color: white !important;
+    color: #000000 !important;
     padding: 0.6rem 1rem !important;
 }
-input::placeholder { color: rgba(255,255,255,0.4) !important; }
+input::placeholder { color: rgba(0,0,0,0.35) !important; }
 label { color: rgba(255,255,255,0.85) !important; font-size: 0.9rem !important; }
 
-/* Buttons */
 .stButton > button {
     background: linear-gradient(90deg, #00c9ff, #92fe9d) !important;
     color: #0f2027 !important;
@@ -85,8 +81,6 @@ label { color: rgba(255,255,255,0.85) !important; font-size: 0.9rem !important; 
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 25px rgba(0,201,255,0.4) !important;
 }
-
-/* Tabs */
 .stTabs [data-baseweb="tab-list"] {
     background: rgba(255,255,255,0.05);
     border-radius: 12px;
@@ -102,12 +96,6 @@ label { color: rgba(255,255,255,0.85) !important; font-size: 0.9rem !important; 
 .stTabs [aria-selected="true"] {
     background: linear-gradient(90deg, #00c9ff, #92fe9d) !important;
     color: #0f2027 !important;
-}
-
-/* Alerts */
-.stSuccess, .stInfo, .stError, .stWarning {
-    border-radius: 12px !important;
-    backdrop-filter: blur(10px) !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -132,8 +120,14 @@ authenticator = stauth.Authenticate(
     config["cookie"]["expiry_days"]
 )
 
+# ── Hero with Earth image ──────────────────────────────
 st.markdown("""
 <div class='hero'>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/240px-The_Earth_seen_from_Apollo_17.jpg'
+         style='width:110px; height:110px; border-radius:50%;
+                border: 3px solid #00c9ff;
+                box-shadow: 0 0 30px rgba(0,201,255,0.5);
+                margin-bottom: 1rem;'/>
     <h1>🌍 Climate Lens</h1>
     <p>Exploring Northern Hemisphere Temperature Trends since 1880</p>
 </div>
