@@ -1,4 +1,3 @@
-%%writefile climate_lens/pages/4_Insights.py
 
 import streamlit as st
 import sys, numpy as np
